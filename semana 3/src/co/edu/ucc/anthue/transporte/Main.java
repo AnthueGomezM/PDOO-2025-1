@@ -2,13 +2,9 @@ package co.edu.ucc.anthue.transporte;
 
 import java.util.Base64;
 
-interface BoletoFactory {
-    Boleto comprarBoleto(String viaje, String pasajero);
-}
-
 class Boleto {
-    private final String viaje;
-    private final String pasajero;
+    private String viaje;
+    private String pasajero;
 
     public Boleto(String viaje, String pasajero) {
         this.viaje = viaje;
@@ -16,12 +12,11 @@ class Boleto {
     }
 
     public void mostrarBoleto() {
-        System.out.println("🎫 Viaje: " + viaje + " | Pasajero: " + pasajero);
+        System.out.println("Viaje: " + viaje + ", Pasajero: " + pasajero);
     }
 }
 
-class Autobus implements BoletoFactory {
-    @Override
+class Autobus {
     public Boleto comprarBoleto(String viaje, String pasajero) {
         return new Boleto(viaje, pasajero);
     }
@@ -54,7 +49,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(encabezado());
 
-        BoletoFactory autobus = new Autobus();
+        Autobus autobus = new Autobus();
         Boleto boleto = autobus.comprarBoleto("Ciudad A - Ciudad B", "Juan Pérez");
         boleto.mostrarBoleto();
 
