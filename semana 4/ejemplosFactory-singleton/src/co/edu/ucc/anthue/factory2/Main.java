@@ -37,7 +37,7 @@ public class Main {
                 *✨✨✨Anthue Gomez✨✨✨*
                 ****************************
                 
-                👷‍♂️istoria de Usuario:
+                👷‍♂️historia de Usuario:
                 Un software de diseño gráfico necesita una fábrica que genere distintos tipos de figuras 
                 sin definir explícitamente sus clases.
                 ---------------------------------------------------------------------------------------------------------------

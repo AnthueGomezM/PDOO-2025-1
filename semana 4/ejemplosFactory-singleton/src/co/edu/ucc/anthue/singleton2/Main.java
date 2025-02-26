@@ -26,7 +26,7 @@ public class Main {
                 *✨✨✨Anthue Gomez✨✨✨*
                 ****************************
                 
-                👷‍♂️istoria de Usuario:
+                👷‍♂️historia de Usuario:
                 Un sistema de gestión de pedidos necesita que la conexión a la base de datos sea única para evitar 
                 conflictos y mejorar el rendimiento.
                 ---------------------------------------------------------------------------------------------------------------

@@ -26,7 +26,7 @@ public class Main {
                 *✨✨✨Anthue Gomez✨✨✨*
                 ****************************
                 
-                👷‍♂️istoria de Usuario:
+                👷‍♂️historia de Usuario:
                 Una aplicación bancaria necesita registrar eventos de usuario (inicio de sesión, transacciones, errores).
                 Para evitar múltiples instancias del Logger y asegurar un control centralizado, se implementa el patrón Singleton.
                 ---------------------------------------------------------------------------------------------------------------

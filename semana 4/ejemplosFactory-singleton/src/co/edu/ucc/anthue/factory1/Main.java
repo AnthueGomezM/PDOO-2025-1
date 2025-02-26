@@ -37,7 +37,7 @@ public class Main {
                 *✨✨✨Anthue Gomez✨✨✨*
                 ****************************
                 
-                👷‍♂️istoria de Usuario:
+                👷‍♂️historia de Usuario:
                 Una empresa automotriz fabrica autos eléctricos y a gasolina. Se requiere una fábrica que genere
                 instancias sin especificar directamente la clase concreta.
                 ---------------------------------------------------------------------------------------------------------------
