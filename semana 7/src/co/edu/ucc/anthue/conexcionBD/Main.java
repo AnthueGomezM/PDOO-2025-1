@@ -1,0 +1,85 @@
+package co.edu.ucc.anthue.conexcionBD;
+
+import java.util.Base64;
+import java.util.Queue;
+import java.util.LinkedList;
+
+// Clase que representa una conexión a la base de datos
+class ConexionDB {
+    private String id;
+
+    public ConexionDB(String id) {
+        this.id = id;
+        System.out.println("Nueva conexión creada: " + id);
+    }
+
+    public void ejecutarConsulta(String consulta) {
+        System.out.println("Ejecutando consulta en " + id + ": " + consulta);
+    }
+}
+
+// Implementación del Object Pool
+class PoolConexiones {
+    private Queue<ConexionDB> pool;
+    private int limite;
+
+    public PoolConexiones(int limite) {
+        this.limite = limite;
+        this.pool = new LinkedList<>();
+        for (int i = 0; i < limite; i++) {
+            pool.add(new ConexionDB("Conexion-" + (i + 1)));
+        }
+    }
+
+    public ConexionDB obtenerConexion() {
+        if (!pool.isEmpty()) {
+            return pool.poll();
+        } else {
+            System.out.println("No hay conexiones disponibles, espere...");
+            return null;
+        }
+    }
+
+    public void liberarConexion(ConexionDB conexion) {
+        pool.offer(conexion);
+    }
+}
+
+public class Main {
+    public static String encabezado() {
+        return """
+                ------------------------------------------------------------------------------------------------------------
+                ****************************
+                *        BIENVENIDO A MI   *
+                *          PROGRAMA 🚀     *
+                *✨✨✨Anthue Gomez✨✨✨*
+                ****************************
+                
+                👷‍♂️historia de Usuario:
+                 Como desarrollador de una aplicación bancaria, necesito un sistema que administre conexiones a 
+                 la base de datos de manera eficiente, permitiendo la reutilización de conexiones activas en lugar 
+                 de crear nuevas instancias cada vez que se realiza una consulta, para mejorar el rendimiento y reducir la carga en el servidor.
+                ---------------------------------------------------------------------------------------------------------------
+                """;
+    }
+
+    public static String getIdentidad() {
+        String nombreCompleto = "Anthue Edinson Yael Gomez Morales";
+        return Base64.getEncoder().encodeToString(nombreCompleto.getBytes());
+    }
+    public static void main(String[] args) {
+        System.out.println(encabezado());
+        PoolConexiones pool = new PoolConexiones(2);
+
+        ConexionDB c1 = pool.obtenerConexion();
+        ConexionDB c2 = pool.obtenerConexion();
+        ConexionDB c3 = pool.obtenerConexion(); // No hay conexiones disponibles
+
+        c1.ejecutarConsulta("SELECT * FROM usuarios");
+        pool.liberarConexion(c1);
+
+        ConexionDB c4 = pool.obtenerConexion(); // Ahora sí hay conexión disponible
+        c4.ejecutarConsulta("INSERT INTO transacciones VALUES (1, 100)");
+        System.out.println("\nIdentidad codificada: " + getIdentidad());
+    }
+}
