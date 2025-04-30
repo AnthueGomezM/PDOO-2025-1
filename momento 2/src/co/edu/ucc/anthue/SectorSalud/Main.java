@@ -43,7 +43,7 @@ public class Main {
         System.out.println("Historial Original:");
         System.out.println(original);
 
-        System.out.println("\n Nueva Versión Clonada:");
+        System.out.println("\nNueva Versión Clonada:");
         System.out.println(nuevaVersion);
     }
 }
