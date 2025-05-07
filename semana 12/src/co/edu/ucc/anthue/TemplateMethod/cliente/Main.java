@@ -36,6 +36,7 @@ public class Main {
 
         System.out.println("\n==== Generando Excel ====");
         excel.generar();
+        System.out.println("\nIdentidad codificada: " + programa.getIdentidad());
         programa.mostrarPatron();
     }
 }

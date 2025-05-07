@@ -43,6 +43,7 @@ public class Main {
 
         boton1.presionar(); // Luz encendida
         boton2.presionar(); // Cortina subida
+        System.out.println("\nIdentidad codificada: " + programa.getIdentidad());
         programa.mostrarPatron();
     }
 }

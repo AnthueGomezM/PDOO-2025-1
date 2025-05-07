@@ -38,6 +38,7 @@ public class Main {
 
         avion1.enviar("Solicito autorización para aterrizar");
         controlador.enviar("Autorizado a aterrizar");
+        System.out.println("\nIdentidad codificada: " + programa.getIdentidad());
         programa.mostrarPatron();
     }
 }

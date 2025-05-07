@@ -42,7 +42,7 @@ public class Main {
         for (Activo a : activos) {
             a.aceptar(reporte);
         }
-
+        System.out.println("\nIdentidad codificada: " + programa.getIdentidad());
         programa.mostrarPatron();
     }
 }

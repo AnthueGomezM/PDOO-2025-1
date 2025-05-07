@@ -35,6 +35,7 @@ public class Main {
         cajero.ingresarPin(1111);
         cajero.ingresarPin(1234);
         cajero.retirarDinero(200);
+        System.out.println("\nIdentidad codificada: " + programa.getIdentidad());
         programa.mostrarPatron();
     }
 }

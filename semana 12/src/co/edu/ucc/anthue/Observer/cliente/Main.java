@@ -37,6 +37,7 @@ public class Main {
 
         sensor.setTemperatura(6.5); // no se notifica
         sensor.setTemperatura(8.5); // activa todos los observadores
+        System.out.println("\nIdentidad codificada: " + programa.getIdentidad());
         programa.mostrarPatron();
     }
 }

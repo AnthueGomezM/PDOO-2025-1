@@ -44,6 +44,7 @@ public class Main {
 
         editor.restaurar(historial.deshacer());
         System.out.println("Undo 2: " + editor.getContenido()); // Hola
+        System.out.println("\nIdentidad codificada: " + programa.getIdentidad());
         programa.mostrarPatron();
     }
 }

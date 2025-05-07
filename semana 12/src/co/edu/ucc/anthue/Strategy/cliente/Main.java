@@ -39,6 +39,7 @@ public class Main {
 
         calculadora.setEstrategia(new ImpuestoEcuador());
         System.out.println("Ecuador: " + calculadora.calcularImpuesto(100000));
+        System.out.println("\nIdentidad codificada: " + programa.getIdentidad());
         programa.mostrarPatron();
     }
 }

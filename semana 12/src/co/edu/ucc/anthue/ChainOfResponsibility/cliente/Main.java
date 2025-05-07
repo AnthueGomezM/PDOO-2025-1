@@ -41,6 +41,7 @@ public class Main {
         supervisor.procesarSolicitud(300);   // Supervisor
         supervisor.procesarSolicitud(3000);  // Jefe de Departamento
         supervisor.procesarSolicitud(15000); // Director Financiero
+        System.out.println("\nIdentidad codificada: " + programa.getIdentidad());
         programa.mostrarPatron();
     }
 }
